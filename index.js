@@ -31,6 +31,7 @@ app.get('/stream/:videoName', (req, res) => {
     const stat = fs.statSync(videoPath);
     const fileSize = stat.size;
     const range = req.headers.range;
+    console.log(range);
 
     if (range) {
         const parts = range.replace(/bytes=/, "").split("-");
